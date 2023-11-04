@@ -1,16 +1,24 @@
-#pragma once
+#ifndef TABLERO_H
+#define TABLERO_H
+#include <string>
+using namespace std;
 
 class Tablero {
 public:
-    Tablero(int size);  // Constructor
-    ~Tablero();  // Destructor
-
-    void mostrar();  // Muestra el tablero en la consola
-    char getFicha(int fila, int columna);  // Obtiene la ficha en una posición dada
-    void setFicha(int fila, int columna, char ficha);  // Coloca una ficha en una posición dada
-    bool esMovimientoValido(int fila, int columna, char ficha);
-
+    Tablero(int filas, int columnas);  // Constructor
+    ~Tablero();                        // Destructor
+    void mostrarTablero();             // Metodo para mostrar el tablero
+    void configurarJugadores();        // metodo para ingresar el nombre de los jugadores
+    void mostrarPuntaje();             // Metodo para mostrar el puntaje
+    void tomarMovimiento(char ficha);  //metodo para el movimiento del jugador
+    void realizarMovimiento(int fila, int columna, char ficha);
+    string nombreJugador1, nombreJugador2;
+    char fichaJugador1, fichaJugador2;
+    string esGanador();
 private:
-    char **tablero;  // Matriz dinámica para el tablero
-    int size;  // Tamaño del tablero
+    char **tablero;                    // El tablero de juego
+    int filas, columnas;               // Dimensiones del tablero
+    int *puntajeJugador1, *puntajeJugador2;  // Puntaje usando memoria dinámica
 };
+
+#endif // TABLERO_H
