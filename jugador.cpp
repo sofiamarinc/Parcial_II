@@ -10,3 +10,18 @@ bool Jugador::soloLetras(const string& nombre) {
     }
     return true;
 }
+
+void Jugador::configurarJugador(char fichaAsignada) {
+    cout << "Ingresa el nombre del Jugador (" << fichaAsignada << "): ";
+    cin >> nombre;
+
+    while (!soloLetras(nombre)) {
+        cout << "El nombre solo debe contener letras." << endl;
+        cout << "Ingresa el nombre del Jugador (" << fichaAsignada << "): ";
+        cin >> nombre;
+    }
+
+    ficha = fichaAsignada;
+    cout << nombre << " Tu ficha es " << ficha << endl;
+}
+
