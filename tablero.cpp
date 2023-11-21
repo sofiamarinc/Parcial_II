@@ -36,7 +36,7 @@ void Tablero::mostrarTablero() const {
     }
     cout << endl;
 
-    // mostrar el tablero y las fias
+    // mostrar el tablero y las fichas
     for (int i = 0; i < filas; ++i) {
         cout << i + 1 << " ";  // Etiquetas de filas empiezan en 1
         for (int j = 0; j < columnas; ++j) {
