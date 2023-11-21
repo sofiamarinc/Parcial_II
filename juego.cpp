@@ -43,7 +43,7 @@ void Juego::realizarMovimiento(int fila, int columna, char ficha) {
         int x = fila + dx[d];
         int y = columna + dy[d];
 
-        // Comprueba que la primera ficha es del oponente.
+        // Comprueba que la primera ficha es del oponente
         if (x >= 0 && x < tablero.getFilas() && y >= 0 && y < tablero.getColumnas() && tablero.getPosicion(x, y) != ficha && tablero.getPosicion(x, y) != '|') {
             while (x >= 0 && x < tablero.getFilas() && y >= 0 && y < tablero.getColumnas() && tablero.getPosicion(x, y) != ficha) {
                 x += dx[d];
@@ -52,7 +52,7 @@ void Juego::realizarMovimiento(int fila, int columna, char ficha) {
 
             //verificacion de que no salgamos del tablero y que tengamos fichas del color a encerrar
             if (x >= 0 && x < tablero.getFilas() && y >= 0 && y < tablero.getColumnas() && tablero.getPosicion(x, y) == ficha) {
-                // Retrocede y cambia las fichas.
+                // Retrocede y cambia las fichas
                 x -= dx[d];
                 y -= dy[d];
                 while (x != fila || y != columna) {

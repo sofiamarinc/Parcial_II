@@ -1,11 +1,21 @@
 #ifndef JUGADOR_H
 #define JUGADOR_H
 
+#include <string>
+#include <iostream>
 
-class juego
-{
+using namespace std;
+
+class Jugador {
+private:
+    string nombre;
 public:
-    juego();
+    string getNombre() const { return nombre; }
+    char ficha;
+
+    Jugador();
+    bool soloLetras(const string& nombre);
+    void configurarJugador(char fichaAsignada);
 };
 
 #endif // JUGADOR_H
