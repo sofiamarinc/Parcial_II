@@ -1,11 +1,14 @@
 #ifndef PUNTAJE_H
 #define PUNTAJE_H
+#include "Tablero.h"//incluimos tablero ya que segun nuestro flujo de juego vemos que de ahi vamos a sacar la informacion del puntaje
 
-
-class puntaje
-{
+class Puntaje {
 public:
-    puntaje();
+    int puntajeJugador1, puntajeJugador2;
+    Puntaje();
+    void calcularPuntaje(const Tablero& tablero);
+    string esGanador(const string& nombreJugador1, const string& nombreJugador2, const Tablero& tablero);
 };
 
 #endif // PUNTAJE_H
+
