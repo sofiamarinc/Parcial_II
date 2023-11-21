@@ -32,3 +32,35 @@ bool Juego::tomarMovimiento(char ficha, int& fila, int& columna) {
     delete[] movimiento; // Liberar la memoria asignada
     return movimientoValido;
 }
+
+void Juego::realizarMovimiento(int fila, int columna, char ficha) {
+    tablero.setPosicion(fila, columna, ficha);
+
+    int dx[] = {-1, -1, -1, 0, 0, 1, 1, 1};
+    int dy[] = {-1, 0, 1, -1, 1, -1, 0, 1};
+
+    for (int d = 0; d < 8; ++d) {
+        int x = fila + dx[d];
+        int y = columna + dy[d];
+
+        // Comprueba que la primera ficha es del oponente.
+        if (x >= 0 && x < tablero.getFilas() && y >= 0 && y < tablero.getColumnas() && tablero.getPosicion(x, y) != ficha && tablero.getPosicion(x, y) != '|') {
+            while (x >= 0 && x < tablero.getFilas() && y >= 0 && y < tablero.getColumnas() && tablero.getPosicion(x, y) != ficha) {
+                x += dx[d];
+                y += dy[d];
+            }
+
+            //verificacion de que no salgamos del tablero y que tengamos fichas del color a encerrar
+            if (x >= 0 && x < tablero.getFilas() && y >= 0 && y < tablero.getColumnas() && tablero.getPosicion(x, y) == ficha) {
+                // Retrocede y cambia las fichas.
+                x -= dx[d];
+                y -= dy[d];
+                while (x != fila || y != columna) {
+                    tablero.setPosicion(x, y, ficha);
+                    x -= dx[d];
+                    y -= dy[d];
+                }
+            }
+        }
+    }
+}
