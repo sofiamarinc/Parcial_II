@@ -20,4 +20,6 @@ void Puntaje::calcularPuntaje(const Tablero& tablero) {
     }
 }
 
+string Puntaje::esGanador(const string& nombreJugador1, const string& nombreJugador2, const Tablero& tablero) {
 
+}
