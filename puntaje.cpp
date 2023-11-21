@@ -21,5 +21,32 @@ void Puntaje::calcularPuntaje(const Tablero& tablero) {
 }
 
 string Puntaje::esGanador(const string& nombreJugador1, const string& nombreJugador2, const Tablero& tablero) {
-
+    int contadorFichasJugador1 = 0;
+    int contadorFichasJugador2 = 0;
+    bool tableroLleno = true;
+    //verificamos que el tablero este lleno
+    for (int i = 0; i < tablero.getFilas(); ++i) {
+        for (int j = 0; j < tablero.getColumnas(); ++j) {
+            char posicion = tablero.getPosicion(i, j);
+            if (posicion == '-') {
+                contadorFichasJugador1++;
+            } else if (posicion == '*') {
+                contadorFichasJugador2++;
+            } else if (posicion == ' ' || posicion == '|') {
+                tableroLleno = false;
+            }
+        }
+    }
+    //cuando el tablero este lleno contamos las fichas el que tenga ams gana
+    if (tableroLleno) {
+        if (contadorFichasJugador1 > contadorFichasJugador2) {
+            return nombreJugador1;
+        } else if (contadorFichasJugador2 > contadorFichasJugador1) {
+            return nombreJugador2;
+        } else {
+            return "Empate";
+        }
+    } else {
+        return "Ninguno";
+    }
 }
