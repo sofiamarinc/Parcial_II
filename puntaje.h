@@ -4,8 +4,11 @@
 
 class Puntaje {
 public:
-    int puntajeJugador1, puntajeJugador2;
+    int* puntajeJugador1;
+    int* puntajeJugador2;
+
     Puntaje();
+    ~Puntaje();
     void calcularPuntaje(const Tablero& tablero);
     string esGanador(const string& nombreJugador1, const string& nombreJugador2, const Tablero& tablero);
 };

@@ -1,26 +1,30 @@
 #include "Puntaje.h"
 
-Puntaje::Puntaje() : puntajeJugador1(0), puntajeJugador2(0) {}
+Puntaje::Puntaje() {
+    puntajeJugador1 = new int(0); // Asignar memoria
+    puntajeJugador2 = new int(0); // Asignar memoria
+}
+
+Puntaje::~Puntaje() {
+    delete puntajeJugador1; // Liberar memoria
+    delete puntajeJugador2; // Liberar memoria
+}
 
 void Puntaje::calcularPuntaje(const Tablero& tablero) {
-    //contadores
-    puntajeJugador1 = 0;
-    puntajeJugador2 = 0;
-    /*este cambio es importante ya que vamos a usar las funciones
-     *  nuevas implementadas en tablero para poder iterarlo*/
+    *puntajeJugador1 = 0;
+    *puntajeJugador2 = 0;
     for (int i = 0; i < tablero.getFilas(); ++i) {
         for (int j = 0; j < tablero.getColumnas(); ++j) {
             char posicion = tablero.getPosicion(i, j);
-            if (posicion == '-') {   //'-' esta es la ficha siempre del jugador 1
-                ++puntajeJugador1;
+            if (posicion == '-') {
+                (*puntajeJugador1)++;
             } else if (posicion == '*') {
-                ++puntajeJugador2;
+                (*puntajeJugador2)++;
             }
-
         }
     }
-    cout<<"el puntaje del JUGADOR 1 es: "<<puntajeJugador1<<endl;
-    cout<<"el puntaje del JUGADOR 2 es: "<<puntajeJugador2<<endl;
+    cout << "el puntaje del JUGADOR 1 es: " << *puntajeJugador1 << endl;
+    cout << "el puntaje del JUGADOR 2 es: " << *puntajeJugador2 << endl;
 }
 
 string Puntaje::esGanador(const string& nombreJugador1, const string& nombreJugador2, const Tablero& tablero) {
