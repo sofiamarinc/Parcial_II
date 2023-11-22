@@ -16,6 +16,8 @@ void Puntaje::calcularPuntaje(const Tablero& tablero) {
             } else if (posicion == '*') {
                 ++puntajeJugador2;
             }
+            cout<<"JUGADOR 1"<<puntajeJugador1;
+            cout<<"JUGADOR 2"<<puntajeJugador2;
         }
     }
 }
