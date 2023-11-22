@@ -8,6 +8,7 @@ using namespace std;
 class ManejoTexto {
 public:
     void revisarHistorial(const string& nombreArchivo);
+    //void guardarresultados()
 };
 
 #endif // MANEJOTEXTO_H

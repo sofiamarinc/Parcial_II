@@ -27,7 +27,7 @@ int main() {
             break;
         case 2:
             //revisarHistorial("puntajes.txt");
-            //cout<< "falta implementarla xD"<<endl;
+            cout<< "falta implementarla xD"<<endl;
             break;
         case 3:
             cout << "GRACIAS POR INGRESAR A MI PROGRAMA :D " << endl;
