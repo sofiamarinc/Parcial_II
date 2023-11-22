@@ -16,10 +16,11 @@ void Puntaje::calcularPuntaje(const Tablero& tablero) {
             } else if (posicion == '*') {
                 ++puntajeJugador2;
             }
-            cout<<"JUGADOR 1"<<puntajeJugador1;
-            cout<<"JUGADOR 2"<<puntajeJugador2;
+
         }
     }
+    cout<<"el puntaje del JUGADOR 1 es: "<<puntajeJugador1<<endl;
+    cout<<"el puntaje del JUGADOR 2 es: "<<puntajeJugador2<<endl;
 }
 
 string Puntaje::esGanador(const string& nombreJugador1, const string& nombreJugador2, const Tablero& tablero) {
