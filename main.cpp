@@ -41,9 +41,10 @@ int main() {
 }
 
 void iniciarJuego() {
-    int filas = 8; //definimos el tamaño del tablero
+    //definimos el tamaño del tablero
+    int filas = 8;
     int columnas = 8;
-
+    //inicializacion de constructores de las clases
     Juego juego(filas, columnas);
     Jugador jugador1, jugador2;
     Puntaje puntaje;
