@@ -1,6 +1,6 @@
 #include "manejotexto.h"
 
-ManejoTexto::ManejoTexto()
+/*ManejoTexto::ManejoTexto()
 {
 
-}
+}*/

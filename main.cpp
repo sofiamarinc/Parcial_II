@@ -26,7 +26,7 @@ int main() {
             iniciarJuego();
             break;
         case 2:
-            revisarHistorial("puntajes.txt");
+            //revisarHistorial("puntajes.txt");
             //cout<< "falta implementarla xD"<<endl;
             break;
         case 3:
@@ -89,3 +89,4 @@ void iniciarJuego() {
     }
 }
 
+//se verifica funcionalidad del codigo
