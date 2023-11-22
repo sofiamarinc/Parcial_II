@@ -11,6 +11,7 @@ private:
     string nombre;
 public:
     string getNombre() const { return nombre; }
+    char getFicha() const { return ficha; }
     char ficha;
     Jugador();
     bool soloLetras(const string& nombre);

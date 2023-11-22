@@ -88,6 +88,10 @@ void iniciarJuego() {
     } else {
         cout << "El ganador es " << ganador << "!" << endl;
     }
+    ManejoTexto manejoTexto;
+    manejoTexto.guardarResultados(jugador1.getNombre(), jugador1.getFicha(), *puntaje.puntajeJugador1,
+                                  jugador2.getNombre(), jugador2.getFicha(), *puntaje.puntajeJugador2,
+                                  ganador);
 }
 
 //se verifica funcionalidad del codigo
