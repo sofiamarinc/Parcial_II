@@ -1,11 +1,13 @@
 #ifndef MANEJOTEXTO_H
 #define MANEJOTEXTO_H
+#include <iostream>
+#include <fstream>
 
+using namespace std;
 
-class manejotexto
-{
+class ManejoTexto {
 public:
-    manejotexto();
+    void revisarHistorial(const string& nombreArchivo);
 };
 
 #endif // MANEJOTEXTO_H
