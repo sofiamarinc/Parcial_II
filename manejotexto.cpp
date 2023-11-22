@@ -29,4 +29,4 @@ void ManejoTexto::guardarResultados(const string& nombreJugador1, char fichaJuga
     outFile.close();
     delete[] dt;
 }
-
+//se prueba la ejecucion del codigo y como funciona correctamente se hace el commit con esta nota
