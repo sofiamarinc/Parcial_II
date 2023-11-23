@@ -6,7 +6,6 @@ class Puntaje {
 public:
     int* puntajeJugador1;
     int* puntajeJugador2;
-
     Puntaje();
     ~Puntaje();
     void calcularPuntaje(const Tablero& tablero);

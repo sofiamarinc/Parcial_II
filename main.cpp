@@ -26,8 +26,8 @@ int main() {
             iniciarJuego();
             break;
         case 2:
-            //revisarHistorial("puntajes.txt");
-            cout<< "falta implementarla xD"<<endl;
+            ManejoTexto manejoTexto;
+            manejoTexto.revisarHistorial();
             break;
         case 3:
             cout << "GRACIAS POR INGRESAR A MI PROGRAMA :D " << endl;
@@ -60,10 +60,10 @@ void iniciarJuego() {
     //ciclo donde inicia el juego hasta que halle un ganador
     while (ganador == "Ninguno") {
         juego.obtenerTablero().mostrarTablero();  // mostramos el tablero
-        puntaje.calcularPuntaje(juego.obtenerTablero()); //falta mejorar el codigo ya que no nos muestra el puntaje como el anterior codigo
+        puntaje.calcularPuntaje(juego.obtenerTablero());
         cout << "Turno del jugador con ficha '" << turno << "'" << endl;
         int fila, columna;
-        if (juego.tomarMovimiento(turno, fila, columna)) {
+        if (juego.tomarMovimiento(turno, fila, columna)) {/*este if flujo principal del juego*/
             juego.realizarMovimiento(fila, columna, turno);
         }
         // Cambia el turno al otro jugador
@@ -78,7 +78,6 @@ void iniciarJuego() {
         if (ganador != "Ninguno") {
             juego.obtenerTablero().mostrarTablero(); // Imprime el tablero
             puntaje.calcularPuntaje(juego.obtenerTablero()); // Muestra el puntaje
-            // juego.guardarResultados(); // falta implementar
             break; // en tal caso que encuentre un gaanador
         }
     }

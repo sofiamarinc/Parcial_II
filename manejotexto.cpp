@@ -24,9 +24,21 @@ void ManejoTexto::guardarResultados(const string& nombreJugador1, char fichaJuga
             << ", Ganador: " << ganador
             << ", Fecha y hora: " << dt
             << std::endl;
-
     // Cerrar el archivo y liberar la memoria
     outFile.close();
     delete[] dt;
 }
 //se prueba la ejecucion del codigo y como funciona correctamente se hace el commit con esta nota
+
+void ManejoTexto::revisarHistorial() {
+    ifstream inFile("puntajes.txt");
+    if (!inFile) {
+        std::cerr << "No se pudo abrir el archivo para leer los resultados." <<endl;
+        return;
+    }
+    string linea;
+    while (getline(inFile, linea)) { // itero linea por linea
+        cout << linea << endl;
+    }
+    inFile.close(); //cerramos el archivo
+}

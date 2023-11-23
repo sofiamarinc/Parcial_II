@@ -1,13 +1,10 @@
 #ifndef JUEGO_H
 #define JUEGO_H
-
 #include "Tablero.h"
 
 class Juego {
 private:
     Tablero tablero;
-
-
 public:
     Tablero& obtenerTablero()  { return tablero; }
     Juego(int filas, int columnas);
