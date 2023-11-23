@@ -3,8 +3,6 @@
 #include "iniciar.h"
 using namespace std;
 
-
-
 int main() {
     int opcion;
     Iniciar iniciar;
@@ -33,7 +31,6 @@ int main() {
             cout << "opcion ingresada no valida." << endl;
         }
     }
-
     return 0;
 }
 
